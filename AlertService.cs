@@ -12,7 +12,7 @@ namespace LabScript
         {
             this.ijsObjectReference = new Lazy<Task<IJSObjectReference>>(() =>
             ijsRuntime.InvokeAsync<IJSObjectReference>("import",
-            "./content/LabScript/Pages/Home.razor.js").AsTask());
+            "./Home.js").AsTask());
 
 
         }
@@ -25,7 +25,7 @@ namespace LabScript
             }
         }
 
-        public async Task CallJsFuction()
+        public async Task CallJsAlertJsFuction()
         {
             var jsModule = await ijsObjectReference.Value;
 
